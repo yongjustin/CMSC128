@@ -1,0 +1,118 @@
+<DOCTYPE html>
+  <html lang="en">
+   <head>
+     <meta charset="utf-8">
+     <title>My Lib</title>
+   <style>
+
+    body{
+	background-color: #000000;
+     margin: o;
+     padding: o;
+     font-family: 'Arial', serif;
+
+     }
+
+     .nav {
+     background-color: #00000;
+     color: #ffffff;
+     list-style: none;
+     text-align: right;
+     padding: 20px 0 0 0;
+     }
+
+     .nav > li {
+     display: inline-block;
+     padding-right: 50px
+     }
+
+    .nav >li > a {
+     text-decoration: none;
+     color: #ffffff;
+     font-size: 14x;
+     }
+
+     .nav > li > a:hover {
+     color: #808080;
+     }
+
+     .logo {
+     color: #ffffff;
+     float: left;
+     padding-left: 25px;
+     font-size:16px;
+     font-weight: bold;
+
+     }
+
+     .logo > a {
+     text-decoration: none;
+     color: #ffffff;
+
+     }
+
+
+.banner {
+  height: 65%;
+  width: 100%;
+	display: block;
+}
+
+.banner > .banner-image {
+  height: 65%;
+  width: 100%;
+	display: block;
+}
+
+     .form {
+    display: block;
+     background-color: #3333;
+	    color: #ffffff;
+     padding: 50px;
+     float: center;
+     text-align: center;
+     }
+
+     .forms label {
+   		font-size: 16px;
+   		font-weight: normal;
+   		margin-bottom: 5px;
+   		display: block;
+   	}
+     </style>
+    </head>
+
+    <body>
+     <ul class="nav">
+
+       <div class="logo">
+         <a href="#"> My Library </a>
+       </div>
+
+        <li> <a href="#"> About </a></li>
+        <li> <a href="#"> Books </a></li>
+
+      </ul>
+
+      <div class="banner">
+      <img class="banner-image" src='https://i.imgur.com/RljppuQ.jpg'>
+      </div>
+
+      <div class="form">
+      <form method="post" action="/archive" id="archive">
+        <center>
+        <h1>Book Drop-Off</h1>
+      	<label for="book"> Your Books Here :</label>
+        <input type = "file" name= "book"><br/>
+        <label for="genre">Genre :  </label>
+        <input type="genre" name="genre" required="genre"/><br/>
+        <input type="submit" value="Archive" class="button" />
+        </center>
+      </form>
+      </div>
+
+
+    </body>
+
+
+  </html>
