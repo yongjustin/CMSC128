@@ -9,6 +9,23 @@ var bodyparser = require('body-parser');
 var urlencodedparser = bodyparser.urlencoded({extended: false});
 var db_connection = "postgres://cmsc128:cmsc128@localhost:5432/cmsc128";
 //postgres://user:password@localhost/dbname
+var session = require('express-session')
+
+app.use(session({
+  secret: 'the struts',
+  resave: false,
+  saveUninitialized: true
+}))
+
+function requiresLogin(req, res, next) {
+  if (req.session && req.session.userId) {
+    return next();
+  } else {
+    var err = new Error('You must be logged in to view this page.');
+    err.status = 401;
+    return next(err);
+  }
+}
 
 app.get('/',function(req,res,next){
 res.sendFile(__dirname + '/index.html');
@@ -18,7 +35,7 @@ app.get('/sign-up', function(req,res){
     res.sendFile('/welcomepage.html', {root: __dirname});
 });
 
-app.get('/loginsuccess', function(req,res){
+app.get('/loginsuccess', mid.requiresLogin, function(req,res){
     res.sendFile('/homepage.html', {root: __dirname});
 });
 
